@@ -9,9 +9,9 @@ const processString = (state) => {
         const rowArr = row.split(/[,|]/).map((field, index) => {
           switch (index) {
             case 0:
-              return {origin: field};
+              return {departure: field};
             case 1:
-              return {departTime: field};
+              return {departureTime: field};
             case 2:
               return {destination: field};
             case 3:

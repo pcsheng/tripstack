@@ -17,6 +17,15 @@ data.newProvider("provider3", require('./data/provider3'));
 
 data.treatData();
 
-console.log(JSON.stringify(data.allLocations("origin")));
+console.log(JSON.stringify(data.allLocations("departure")));
 console.log(JSON.stringify(data.allLocations("destination")));
 console.log(JSON.stringify(data.searchProviders("YYC", "YYZ")));
+
+app.get('/locations', (req, res) => {
+  res.json({"departure": data.allLocations("departure"),
+            "destination": data.allLocations("destination")});
+});
+
+app.listen(8080, () => {
+  console.log('server on 8080');
+})

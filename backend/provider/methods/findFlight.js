@@ -3,9 +3,9 @@
 // from each flight provider
 const findFlight = (state) => {
   return ({
-    findFlight: (origin, destination) => {
+    findFlight: (departure, destination) => {
       return state.flights.filter((flight) => {
-        return flight.origin === origin && flight.destination === destination;
+        return flight.departure === departure && flight.destination === destination;
       });
     }
   });
