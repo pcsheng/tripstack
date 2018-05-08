@@ -1,5 +1,5 @@
 // this function is here in case the data is scraped as a string
-// instead of a JSON object
+// returns the data as an array of objects [{}, {}, ...]
 const processString = (state) => {
   return ({
     processString: () => {
