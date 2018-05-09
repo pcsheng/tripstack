@@ -26,6 +26,11 @@ app.get('/locations', (req, res) => {
             "destination": data.allLocations("destination")});
 });
 
+app.get('/flights', (req, res) => {
+  const { departure, destination } = req.query;
+  res.json(data.searchProviders(departure, destination));
+});
+
 app.listen(8080, () => {
   console.log('server on 8080');
 })
