@@ -29,6 +29,7 @@ class Flights extends Component {
   render() {
 
     const { flights } = this.state;
+    const { departure, destination } = this.props.match.params;
 
     const available = flights.reduce((accu, flight) => {        // removes duplicate by comparing the stringified objects
       !accu.includes(JSON.stringify(flight)) && accu.push(JSON.stringify(flight));
@@ -57,7 +58,7 @@ class Flights extends Component {
 
     return (
       <div className="row" >
-        {available.length ? available : <h5>There are no flights available for the chosen route</h5>}
+        {available.length ? available : <h5>There are no flights available from {departure} to {destination}</h5>}
       </div>
     )
   }
